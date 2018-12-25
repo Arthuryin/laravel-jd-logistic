@@ -1,4 +1,7 @@
 <?php
+
+namespace Arthuryinzhen\JDLogistic\JD\Request;
+
 class LdopMiddleWaybillWaybill2CTraceApiRequest
 {
 	private $apiParas = array();

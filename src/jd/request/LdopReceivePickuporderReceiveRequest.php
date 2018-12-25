@@ -1,4 +1,7 @@
 <?php
+
+namespace Arthuryinzhen\JDLogistic\JD\Request;
+
 class LdopReceivePickuporderReceiveRequest
 {
 	private $apiParas = array();

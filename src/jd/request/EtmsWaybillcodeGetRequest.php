@@ -1,6 +1,6 @@
 <?php
 
-namespace Arthuryinzhen\JDLogistic\Request;
+namespace Arthuryinzhen\JDLogistic\JD\Request;
 
 class EtmsWaybillcodeGetRequest
 {

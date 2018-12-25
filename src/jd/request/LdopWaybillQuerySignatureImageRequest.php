@@ -1,4 +1,7 @@
 <?php
+
+namespace Arthuryinzhen\JDLogistic\JD\Request;
+
 class LdopWaybillQuerySignatureImageRequest
 {
 	private $apiParas = array();

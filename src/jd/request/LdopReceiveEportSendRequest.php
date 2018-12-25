@@ -1,4 +1,7 @@
 <?php
+
+namespace Arthuryinzhen\JDLogistic\JD\Request;
+
 class LdopReceiveEportSendRequest
 {
 	private $apiParas = array();

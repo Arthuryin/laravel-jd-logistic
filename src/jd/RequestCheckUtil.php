@@ -1,6 +1,6 @@
 <?php
 
-namespace Arthuryinzhen\JDLogistic;
+namespace Arthuryinzhen\JDLogistic\JD;
 
 /**
  * API入参静态检查类

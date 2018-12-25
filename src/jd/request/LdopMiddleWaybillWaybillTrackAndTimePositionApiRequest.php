@@ -1,4 +1,7 @@
 <?php
+
+namespace Arthuryinzhen\JDLogistic\JD\Request;
+
 class LdopMiddleWaybillWaybillTrackAndTimePositionApiRequest
 {
 	private $apiParas = array();

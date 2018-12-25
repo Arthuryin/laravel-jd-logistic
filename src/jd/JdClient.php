@@ -1,6 +1,6 @@
 <?php
 
-namespace Arthuryinzhen\JDLogistic;
+namespace Arthuryinzhen\JDLogistic\JD;
 
 class JdClient
 {

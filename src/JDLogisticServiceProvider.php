@@ -35,7 +35,9 @@ class JDLogisticServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $this->app->singleton("JDLogistic",function(){
+            return new JDLogisticRepository();
+        });
     }
 
     /**

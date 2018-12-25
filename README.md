@@ -1,18 +1,17 @@
 # action-log
-Laravel 5 操作日志自动记录
+Laravel 5 京东物流接口
 
 
 ## Installation
 
 The ActionLog Service Provider can be installed via [Composer](http://getcomposer.org) by requiring the
-`arthuryinzhen/php-action-log` package and setting the `minimum-stability` to `dev` (required for Laravel 5) in your
+`arthuryinzhen/laravel-jd-logistic` package and setting the `minimum-stability` to `dev` (required for Laravel 5) in your
 project's `composer.json`.
 
 ```json
 {
     "require": {
-       
-        "arthuryinzhen/php-action-log": "dev-master"
+           "arthuryinzhen/laravel-jd-logistic": "dev-master"
     },
    
 }
@@ -22,12 +21,11 @@ or
 
 Require this package with composer:
 ```
-composer require luoyangpeng/action-log dev-master
+composer require arthuryinzhen/laravel-jd-logistic dev-master
 ```
 
 Update your packages with ```composer update``` or install with ```composer install```.
 
-In Windows, you'll need to include the GD2 DLL `php_gd2.dll` as an extension in php.ini.
 
 ## Usage
 
@@ -39,14 +37,15 @@ Find the `providers` key in `config/app.php` and register the ActionLog Service 
 ```php
     'providers' => [
         // ...
-        'arthuryinzhen\ActionLog\ActionLogServiceProvider',
+        
+        'Arthuryinzhen\JDLogistic\JDLogisticServiceProvider',
     ]
 ```
 for Laravel 5.1+
 ```php
     'providers' => [
         // ...
-        arthuryinzhen\ActionLog\ActionLogServiceProvider::class,
+        Arthuryinzhen\JDLogistic\JDLogisticServiceProvider::class,
     ]
 ```
 
@@ -55,14 +54,14 @@ Find the `aliases` key in `config/app.php`.
 ```php
     'aliases' => [
         // ...
-        'ActionLog' => 'arthuryinzhen\ActionLog\Facades\ActionLogFacade',
+        'JDLogistic' => 'Arthuryinzhen\JDLogistic\Facades\JDLogistic',
     ]
 ```
 for Laravel 5.1+
 ```php
     'aliases' => [
         // ...
-        'ActionLog' => arthuryinzhen\ActionLog\Facades\ActionLogFacade::class,
+        'JDLogistic' => Arthuryinzhen\JDLogistic\Facades\JDLogistic::class,
     ]
 ```
 
@@ -74,72 +73,41 @@ To use your own settings, publish config.
 
 ```$ php artisan vendor:publish```
 
-`config/action-log.php`
+`config/JdLogistic.php`
 
 ```php
 
-	return [
-	    //填写要记录的日志的模型名称
-	    'models' => [
-		    '\App\models\User',
+	'client' => [
+            'appKey'      => env('JD_CLIENT_APP_KEY', '26EAC2509056EB38FB623D9A49296D2C'),
+            'appSecret'   => env('JD_CLIENT_APP_SECRET', '1abdc5a97ecb4594ab7b772296bcfbbd'),
+            'accessToken' => env('JD_CLIENT_ACCESS_TOKEN', '1f1d3048-220a-484d-ad93-f3808d9aacc1'),
+            'serverUrl'   => env('JD_CLIENT_SERVER_URL', 'https://api.jd.com/routerjson'),
         ],
-		
-		// 填写监视类别, 默认为admin 该参数为auth相关       
-        'guards' => [
-            'admin',
-        ],  
-	];
 ```
-for Laravel 5.1+
-```php
 
-	return [
-	    //填写要记录的日志的模型名称
-	    'models' => [
-		    \App\models\User::class,
-        ],
-		
-		// 填写监视类别, 默认为admin 该参数为auth相关       
-        'guards' => [
-            'admin',
-        ],  
-	];
-```
 ## Last Step
-run:
-```$ php artisan migrate```
+
+modify you `.env` 
+
+```env
+
+JD_CLIENT_APP_KEY=
+JD_CLIENT_APP_SECRET=
+JD_CLIENT_ACCESS_TOKEN=
+JD_CLIENT_SERVER_URL="https://api.jd.com/routerjson"
+
+```
 
 ## Demo
-自动记录操作日志，数据库操作需按如下:
-```php
-
-update
-
-$users = Users::find(1);
-$users->name = "youname";
-$users->save();
-
-add
-
-$users = new Users();
-$users->name = "youname";
-$users->save()
-
-delete
-
-Users:destroy(1);
 
 ```
-
-主动记录操作日志
-
-```php
-
-use ActionLog
-
-ActionLog::createActionLog($type,$content);
-
+public function getTest(Request $request)
+{
+    $array = $request->input();
+    $lotus = new JDLogisticRepository();
+    $result = $lotus->ldopWaybillReceiveRequest($array);
+    dd($result);
+}
 ```
-
 
 

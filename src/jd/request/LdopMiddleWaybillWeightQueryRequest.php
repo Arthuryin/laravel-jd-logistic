@@ -1,4 +1,7 @@
 <?php
+
+namespace Arthuryinzhen\JDLogistic\JD\Request;
+
 class LdopMiddleWaybillWeightQueryRequest
 {
 	private $apiParas = array();
