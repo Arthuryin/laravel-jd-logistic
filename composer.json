@@ -1,0 +1,25 @@
+{
+    "name": "arthuryinzhen/laravel-jd-logistic",
+    "description": "A laravel package of logistic for jd",
+    "keywords": ["laravel","jd","logistic"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "尹振",
+            "email": "arthur.yinzhen@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+
+    "version": "1.0.0",
+
+    "autoload": {
+        "psr-4": {
+            "Arthuryinzhen\\JDLogistic\\": "src/"
+        }
+    }
+}
