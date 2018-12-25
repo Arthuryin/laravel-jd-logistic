@@ -170,7 +170,7 @@ class JdClient
 			return $result;
 		}
 
-		return $respObject;
+		return json_encode($respObject);
 	}
 
 	public function exec($paramsArray)

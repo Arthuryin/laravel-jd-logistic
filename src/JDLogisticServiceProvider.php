@@ -23,8 +23,9 @@ class JDLogisticServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/JdLogistic.php' => config_path('JdLogistic.php'),
+            __DIR__.'/../config/JdLogistic.php' => config_path('JdLogistic.php'),
         ]);
+
     }
 
     /**
@@ -34,9 +35,7 @@ class JDLogisticServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $configPath = realpath(__DIR__ . '/../config/JdLogistic.php');
-        $this->mergeConfigFrom($configPath, 'JdLogistic');
-        $this->publishes([$configPath => config_path('JdLogistic.php')], 'config');
+
     }
 
     /**
