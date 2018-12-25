@@ -12,7 +12,8 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "arthuryinzhen/laravel-jd-logistic": "dev-master"
     },
 
     "version": "1.0.0",
