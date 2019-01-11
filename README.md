@@ -54,14 +54,14 @@ Find the `aliases` key in `config/app.php`.
 ```php
     'aliases' => [
         // ...
-        'JDLogistic' => 'Arthuryinzhen\JDLogistic\Facades\JDLogistic',
+        'JDLogistic' => 'Arthuryinzhen\JDLogistic\Facades\JDLogisticFacade',
     ]
 ```
 for Laravel 5.1+
 ```php
     'aliases' => [
         // ...
-        'JDLogistic' => Arthuryinzhen\JDLogistic\Facades\JDLogistic::class,
+        'JDLogistic' => Arthuryinzhen\JDLogistic\Facades\JDLogisticFacade::class,
     ]
 ```
 
