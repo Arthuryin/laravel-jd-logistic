@@ -34,4 +34,20 @@ class BaseRequest
         return $client;
     }
 
+    /**
+     * 处理上传参数
+     * @param $request
+     * @param $array
+     *
+     * @return mixed
+     */
+    protected function putSomeParam($request, $array)
+    {
+        $collect = collect($array);
+        $collect->each(function ($key, $item) use ($request) {
+            $request->putOtherTextParam($key, $item);
+        });
+        return $request;
+    }
+
 }
