@@ -26,7 +26,7 @@ class JDLogisticEtmsRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -44,7 +44,7 @@ class JDLogisticEtmsRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -62,7 +62,7 @@ class JDLogisticEtmsRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -80,7 +80,7 @@ class JDLogisticEtmsRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
 }

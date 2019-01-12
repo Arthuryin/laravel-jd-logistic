@@ -27,7 +27,7 @@ class JDLogisticAreaRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -45,7 +45,7 @@ class JDLogisticAreaRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -63,7 +63,7 @@ class JDLogisticAreaRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -81,7 +81,7 @@ class JDLogisticAreaRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
     /**
@@ -99,7 +99,7 @@ class JDLogisticAreaRepository extends BaseRequest
 
         $result = $this->jdClient->execute($request, $this->jdClient->accessToken);
 
-        return \GuzzleHttp\json_decode($result);
+        return \GuzzleHttp\json_decode($result, true);
     }
 
 
