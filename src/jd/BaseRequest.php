@@ -45,7 +45,7 @@ class BaseRequest
     {
         $collect = collect($array);
         $collect->each(function ($key, $item) use ($request) {
-            $request->putOtherTextParam($key, $item);
+            $request->putOtherTextParam($item, $key);
         });
         return $request;
     }
